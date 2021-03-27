@@ -1,4 +1,5 @@
-std_msgs/Int64 item_id
+std_msgs/Int64 lamp_id
+std_msgs/Int64 smartlamp_id
 std_msgs/Int64 state
 ---
 std_msgs/Bool res
