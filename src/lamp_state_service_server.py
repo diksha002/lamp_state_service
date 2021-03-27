@@ -23,12 +23,12 @@ def handle_request(request):
 
 	if((smartlamp_id > 0 and smartlamp_id < 5) and (smart_state > -1 or smart_state < 3 )):
 		json_dict["smartlamp_%d"%(smartlamp_id)]=smart_state
-		smart_response=change_stateResponse()
-		smart_response.res.data=True
+		response=change_stateResponse()
+		response.smart_res.data=True
 	else:
-		smart_response=change_stateResponse()
-		smart_response.res.data=False
-	return smart_response
+		response=change_stateResponse()
+		response.smart_res.data=False
+	return response
 	
 
 def simple_server():
