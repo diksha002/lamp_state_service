@@ -9,7 +9,26 @@ def handle_request(request):
 	global json_dict
 	lamp_id=request.lamp_id.data
 	state=request.state.data
+	smartlamp_id=request.smartlamp_id.data
+	smart_state=request.smart_state.data
 	
+	if((lamp_id > 0 and lamp_id < 9) and (state == 1 or state == 0)):
+		json_dict["lamp_%d"%(lamp_id)]=state
+		response=change_stateResponse()
+		response.res.data=True
+	else:
+		response=change_stateResponse()
+		response.res.data=False
+	return response
+
+	if((smartlamp_id > 0 and smartlamp_id < 5) and (smart_state > -1 or smart_state < 3 )):
+		json_dict["smartlamp_%d"%(smartlamp_id)]=smart_state
+		response=change_stateResponse()
+		response.res.data=True
+	else:
+		response=change_stateResponse()
+		response.res.data=False
+	return response
 	"""
 	if ((lamp_id == 1 or access_id) and (state == 1 or state == 0)):
 		json_dict["access_%d"%(access_id)]=state
@@ -36,10 +55,10 @@ def simple_server():
 
 
 	json_dict={
-	#"smartlamp_1":0,
-	#"smartlamp_2":0,
-	#"smartlamp_3":0,
-	#"smartlamp_4":0,
+	"smartlamp_1":0,
+	"smartlamp_2":0,
+	"smartlamp_3":0,
+	"smartlamp_4":0,
 	"lamp_1":0,
 	"lamp_2":0,
 	"lamp_3":0,
