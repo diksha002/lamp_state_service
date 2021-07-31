@@ -9,10 +9,14 @@ def handle_request(request):
 	global json_dict
 	lamp_id=request.lamp_id.data
 	state=request.state.data
-	smartlamp_id=request.smartlamp_id.data
-	smart_state=request.smart_state.data
 	
-	if((lamp_id > 0 and lamp_id < 9) and (state == 1 or state == 0)):
+	#smart lamp
+	if((lamp_id > 0 and lamp_id < 5) and (state == 0 or state == 1 or state == 2 )):
+		json_dict["lamp_%d"%(lamp_id)]=state
+		response=change_stateResponse()
+		response.res.data=True
+	#non-smart lamp
+	elif((lamp_id > 4 and lamp_id < 9) and (state == 1 or state == 0)):
 		json_dict["lamp_%d"%(lamp_id)]=state
 		response=change_stateResponse()
 		response.res.data=True
@@ -21,16 +25,7 @@ def handle_request(request):
 		response.res.data=False
 	return response
 
-	if((smartlamp_id > 0 and smartlamp_id < 5) and (smart_state > -1 or smart_state < 3 )):
-		json_dict["smartlamp_%d"%(smartlamp_id)]=smart_state
-		response=change_stateResponse()
-		response.smart_res.data=True
-	else:
-		response=change_stateResponse()
-		response.smart_res.data=False
-	return response
 	
-
 def simple_server():
 	global json_dict
 	rospy.init_node("lamp_state_service")
@@ -38,12 +33,9 @@ def simple_server():
 	pub=rospy.Publisher("lamp_state", String,queue_size=10)
 	rate=rospy.Rate(15)
 
-
+	#smart lamp id = 1 - 4
+	#non_smart lamp id = 5 - 8
 	json_dict={
-	"smartlamp_1":0,
-	"smartlamp_2":0,
-	"smartlamp_3":0,
-	"smartlamp_4":0,
 	"lamp_1":0,
 	"lamp_2":0,
 	"lamp_3":0,
