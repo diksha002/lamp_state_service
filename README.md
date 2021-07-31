@@ -3,7 +3,7 @@ Ce package contient 2 dossiers : src et srv, les fichiers: CMakeLists.txt, packa
 
 Le dossier src contient le fichier que vous devez executez, et le dossier srv contient le fichier necessaire pour que le fichier lamp_state_service_server.py s'execute correctement.
 
-Le but de ce projet est d'afficher les états de chaque lampes en temps réel et les états sont affichés de type json.
+Le but de ce projet est d'afficher les états de chaque lampes en temps réel et les états sont affichés de type json
 
 Vous pouvez aussi changer les états de ces lampadaires et les faire affichés.
 
