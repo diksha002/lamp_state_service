@@ -31,7 +31,7 @@ cd ..
 source devel/setup.bash
 ```
 # Execution
-Pour executer ce projet, vous allez executer le fichier `lamp_state_service_server.py` sur un terminal et simultanément executer des lignes de commandes dans chaque terminal comme décrit dessous. En tous vous aurez 4 terminal qui seront servi en même temps lors de l'execution de ce noeud
+Pour executer ce projet, vous allez executer le fichier `lamp_state_service_server.py` sur un terminal et simultanément executer des lignes de commandes dans chaque terminal comme décrit dessous. En tout, vous aurez 4 terminal qui seront servi en même temps lors de l'execution de ce noeud
 
 ## roscore
 Ouvrez un terminal et lancer le roscore.
