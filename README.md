@@ -60,7 +60,7 @@ source devel/setup.bash
 rosservice call /lamp_state_service_server TAB TAB
 ```
 Puis naviguez votre cursor(La ligne vertical clignotant) jusqu'à data du lamp_id:
-- Choisissez un lamp_id entre 1 à 8 , et naviguez votre cursor jusqu'à le data du state et modifiez la valeur de l'état du lampadaire que vous voulez (Veuillez vous referencer sur les chiffres à inséré correctement dans la section précédente nommée `A noté`)
+- Choisissez un lamp_id entre 1 à 8 , et naviguez votre cursor jusqu'à le `data` du state et modifiez la valeur de l'état du lampadaire que vous voulez (Veuillez vous referencer sur les chiffres à inséré correctement dans la section précédente nommée `A noté`)
 - Puis tapez la touche ENTER
 - Si la sortie 'res' est `True`, cela veut dire que l'état du lampadaire est affiché avec succès
 - Si la sortie 'res' est `False`, cela veut dire que l'état du lampadaire ne va pas etre afficher et que vous avez fait un erreur en insérant les données 
